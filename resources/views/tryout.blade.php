@@ -15,6 +15,5 @@
 
 
 @section('pagescript')
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-    <script src="/script.js" defer></script>
+    <script src="{{ asset('js/free.js') }}"></script>
 @endsection
