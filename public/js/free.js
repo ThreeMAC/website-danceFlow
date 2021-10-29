@@ -52,7 +52,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 function drawCameraIntoCanvas() {
     ctx.drawImage(video, 0, 0, 640, 360); //16:9
     drawKeypoints()
-    drawSkeleton()
+    //drawSkeleton()
     //console.log(poses)
     window.requestAnimationFrame(drawCameraIntoCanvas);
 }
@@ -63,14 +63,30 @@ function drawKeypoints() {
     // Loop through all the poses detected
     for (let i = 0; i < poses.length; i += 1) {
         // For each pose detected, loop through all the keypoints
-        for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
-            let keypoint = poses[i].pose.keypoints[j];
-            // Only draw an ellipse is the pose probability is bigger than 0.2
-            if (keypoint.score > 0.2) {
-                ctx.beginPath();
-                ctx.arc(keypoint.position.x, keypoint.position.y, 10, 0, 2 * Math.PI);
-                ctx.stroke();
-            }
+
+
+        // for (let j = 0; j < poses[i].pose.keypoints.length; j += 1) {
+        //     let keypoint = poses[i].pose.keypoints[j];
+        //     // Only draw an ellipse is the pose probability is bigger than 0.2
+        //     if (keypoint.score > 0.2) {
+        //         ctx.beginPath();
+        //         ctx.arc(keypoint.position.x, keypoint.position.y, 10, 0, 2 * Math.PI);
+        //         ctx.stroke();
+        //     }
+        // }
+
+        let keypoint = poses[i].pose.keypoints[10];
+
+        if (keypoint.score > 0.2) {
+                     ctx.beginPath();
+                     ctx.arc(keypoint.position.x, keypoint.position.y, 10, 0, 2 * Math.PI);
+                     ctx.stroke();
+                 }
+        if (keypoint.position.x >= 300){
+            //console.log("rechts")
+        }
+        if(keypoint.position.x <300){
+            //console.log("links")
         }
     }
 }

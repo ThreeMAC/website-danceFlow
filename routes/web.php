@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::get('/tryout', function (){
     return view('tryout');
 });
+
+
+//Route::get('/tryout', function (){
+//    return view('tryout2');
+//});
+//
+//Route::get('/myModel/metadata.json', [App\http\Controllers\fileController::class, 'metadata'] );
+//
+//Route::get('/myModel/model.json', [App\http\Controllers\fileController::class, 'model'] );
