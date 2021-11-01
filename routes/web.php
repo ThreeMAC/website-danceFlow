@@ -22,6 +22,9 @@ Route::get('/tryout', function (){
     return view('tryout');
 });
 
+Route::get('/homepage', function (){
+    return view('homepage');
+});
 
 //Route::get('/tryout', function (){
 //    return view('tryout2');

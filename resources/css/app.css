@@ -24,3 +24,8 @@ canvas {
     margin-right: auto;
     display: block;
 }
+
+
+#main {
+    background-color: black;
+}
